@@ -1,7 +1,7 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.wangEditor = factory());
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global.wangEditor = factory());
 }(this, (function () { 'use strict';
 
 /*
@@ -4036,7 +4036,7 @@ UploadImg.prototype = {
     },
 
     // 根据链接插入图片
-    insertLinkImg: function insertLinkImg(link) {
+    insertLinkImg: function insertLinkImg(link, id, dataTag) {
         var _this2 = this;
 
         if (!link) {
@@ -4057,7 +4057,7 @@ UploadImg.prototype = {
             }
         }
 
-        editor.cmd.do('insertHTML', '<img src="' + link + '" style="max-width:30%;"/>');
+        editor.cmd.do('insertHTML', '<img src="' + link + '" + 'id="' + id + '" ' + ' dataTag="' + dataTag + '" ' + style="max-width:30%;"/>');
 
         // 验证图片 url 是否有效，无效的话给出提示
         var img = document.createElement('img');
